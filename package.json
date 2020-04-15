@@ -1,0 +1,20 @@
+{
+  "name": "oracle_connector",
+  "version": "1.0.0",
+  "description": "Orace connector for Node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Michael Johnson",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "knex": "^0.20.13",
+    "oracledb": "^4.2.0"
+  }
+}

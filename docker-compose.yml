@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+    node:
+        build: .
+        command: ["nodemon", "server.js"]
+        volumes:
+            - .:/usr/src/app
+        ports:
+            - 8888:3000
