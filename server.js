@@ -9,9 +9,10 @@ app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 var conn = knex({
-  client: 'oracledb',
+  client: 'mysql',
   connection: {
     host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
@@ -23,7 +24,7 @@ app.set("db", conn);
 app.get('/', function (req, res) {
   const db = req.app.get('db');
 
-  db.raw("SELECT sysdate FROM dual")
+  db.raw("SELECT * FROM INFORMATION_SCHEMA.TABLES")
     .then(rows => {
       res.send(rows);
     })
